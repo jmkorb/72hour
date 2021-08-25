@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _72hour.Models
 {
-    public class Class1
+    public class Like
     {
     }
 }
