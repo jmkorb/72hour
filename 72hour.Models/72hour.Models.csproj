@@ -77,7 +77,6 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="LikeCreate.cs" />
-    <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
