@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace _72hour.Models
 {
-    public class Like
+    public class LikeCreate
     {
-        public int LikeId { get; set; }
-
-        [ForeignKey(nameof(Post))]
-        public int PostId { get; set; }
-        public virtual Post Posts { get; set; }
 
     }
 
