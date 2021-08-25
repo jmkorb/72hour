@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comment.cs" />
     <Compile Include="LikeCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

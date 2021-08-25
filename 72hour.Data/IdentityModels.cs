@@ -1,9 +1,10 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using _72hour.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.AspNetCore.Identity;
 
 namespace _72hour.Data
 {
@@ -24,11 +25,17 @@ namespace _72hour.Data
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+
         }
         
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Reply> Replies { get; set; }
     }
 }

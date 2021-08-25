@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using _72hour.WebAPI.Models;
+using _72hour.Data;
 
 namespace _72hour.WebAPI.Providers
 {

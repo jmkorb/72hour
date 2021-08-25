@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using _72hour.WebAPI.Models;
+using _72hour.Data;
 
 namespace _72hour.WebAPI
 {
