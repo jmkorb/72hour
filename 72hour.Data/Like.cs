@@ -14,11 +14,15 @@ namespace _72hour.Data
         [Key]
         public int LikeId { get; set; }
 
-        [ForeignKey(nameof(Post))]
+        [ForeignKey(nameof(Models.Post))]
         public int PostId { get; set; }
-        public virtual Post Posts { get; set; }
+        public virtual Post Post { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset ModifiedUtc { get; set; }
     }
 }
