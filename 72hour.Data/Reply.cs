@@ -14,7 +14,7 @@ namespace _72hour.Data
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey(nameof(Comment))]
+        [ForeignKey(nameof(Comments))]
         public string Text { get; set; }
 
         public virtual Comment Comments { get; set; }

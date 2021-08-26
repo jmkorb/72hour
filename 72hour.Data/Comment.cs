@@ -18,7 +18,7 @@ namespace _72hour.Models
 
         public virtual List<Reply> Replies { get; set; }
 
-        [ForeignKey(nameof(Post))]
+        [ForeignKey(nameof(Posts))]
 
         public int PostId { get; set; }
 
