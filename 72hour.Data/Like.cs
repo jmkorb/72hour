@@ -14,7 +14,7 @@ namespace _72hour.Data
         [Key]
         public int LikeId { get; set; }
 
-        [ForeignKey(nameof(Models.Post))]
+        [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
 
