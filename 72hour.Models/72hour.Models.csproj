@@ -84,7 +84,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LikeCreate.cs" />
+    <Compile Include="Like.Models\LikeCreate.cs" />
+    <Compile Include="Like.Models\LikeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

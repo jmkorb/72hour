@@ -39,6 +39,18 @@ namespace _72hour.WebAPI.Controllers
 
             return InternalServerError();
         }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            var svc = CreateLikeService();
+            var likes = await svc.GetLikesByPostId(id);
+
+            if (id < 1)
+                return BadRequest();
+
+            return Ok(likes);
+        }
     }
 
   
