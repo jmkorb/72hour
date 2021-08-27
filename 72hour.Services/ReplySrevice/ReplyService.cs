@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _72hour.Services.ReplySrevice
 {
-    class ReplyService
+    public class ReplyService
     {
         private readonly Guid _authorId;
         public ReplyService(Guid authorId)
@@ -50,9 +50,9 @@ namespace _72hour.Services.ReplySrevice
                     return false;
                 }
 
-                entity.Comment = comment;
-                entity.Comment.Reply.Add(entity);
-                ctx.Comments.Add(entity);
+                entity.Comments = comment;
+                entity.Comments.Replies.Add(entity);
+                ctx.Replies.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }
         }

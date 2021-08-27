@@ -1,4 +1,5 @@
 ﻿using _72hour.Models;
+using _72hour.Models.LikeModels;
 using _72hour.Services;
 using Microsoft.AspNet.Identity;
 using System;

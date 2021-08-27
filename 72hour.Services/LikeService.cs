@@ -1,6 +1,6 @@
 ﻿using _72hour.Data;
 using _72hour.Models;
-using _72hour.Models.Like.Models;
+using _72hour.Models.LikeModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

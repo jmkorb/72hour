@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,9 +130,6 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
@@ -314,6 +315,14 @@
     <ProjectReference Include="..\72hour.Data\72hour.Data.csproj">
       <Project>{F4EA2D3C-812E-4FDA-BDE1-BB37667E346A}</Project>
       <Name>72hour.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\72hour.Models\72hour.Models.csproj">
+      <Project>{05B956FF-0A7A-4EBB-AF1E-BE87C0FB6DDD}</Project>
+      <Name>72hour.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\72hour.Services\72hour.Services.csproj">
+      <Project>{BBCF17AD-D193-4097-8747-30E319869C47}</Project>
+      <Name>72hour.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _72hour.Models.ReplyModels
 {
-    class ReplyCreate
+    public class ReplyCreate
     {
         public int CommentId { get; set; }
         [Required]

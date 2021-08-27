@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _72hour.Models.ReplyModels;
+using _72hour.Services.ReplySrevice;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +12,13 @@ namespace _72hour.WebAPI.Controllers.ReplyController
 {
     public class ReplyController : ApiController
     {
+        private ReplyService CreateReplyService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var svc = new ReplyService(userId);
+            return svc;
+        }
+
         [HttpGet]
         public async Task<IHttpActionResult> Get(int id)
         {

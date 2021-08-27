@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _72hour.Models
+namespace _72hour.Models.LikeModels
 {
-    public class LikeCreate
+    public class LikeListItem
     {
+        public int LikeId { get; set; }
         public int PostId { get; set; }
 
     }
-
 }
