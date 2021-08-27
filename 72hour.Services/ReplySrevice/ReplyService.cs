@@ -49,6 +49,11 @@ namespace _72hour.Services.ReplySrevice
                 {
                     return false;
                 }
+
+                entity.Comment = comment;
+                entity.Comment.Reply.Add(entity);
+                ctx.Comments.Add(entity);
+                return await ctx.SaveChangesAsync() > 0;
             }
         }
     }
