@@ -1,5 +1,4 @@
-﻿using _72hour.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,16 +8,17 @@ using System.Threading.Tasks;
 
 namespace _72hour.Data
 {
-    public class Reply
+    class Reply
     {
         [Key]
         public int Id { get; set; }
 
         [ForeignKey(nameof(Comments))]
         public string Text { get; set; }
+        public int CommentId { get; set; }
 
         public virtual Comment Comments { get; set; }
 
-        public Guid AuthorId { get; set; }
+        public Guid AutorId { get; set; }
     }
 }
