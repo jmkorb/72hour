@@ -206,7 +206,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController\PostController.cs" />
+    <Compile Include="Controllers\LikeController.cs" />
     <Compile Include="Controllers\ReplyController\ReplyController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,14 +314,6 @@
     <ProjectReference Include="..\72hour.Data\72hour.Data.csproj">
       <Project>{F4EA2D3C-812E-4FDA-BDE1-BB37667E346A}</Project>
       <Name>72hour.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\72hour.Models\72hour.Models.csproj">
-      <Project>{05b956ff-0a7a-4ebb-af1e-be87c0fb6ddd}</Project>
-      <Name>72hour.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\72hour.Services\72hour.Services.csproj">
-      <Project>{bbcf17ad-d193-4097-8747-30e319869c47}</Project>
-      <Name>72hour.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
