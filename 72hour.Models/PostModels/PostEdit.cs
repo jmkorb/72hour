@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace _72hour.Models.PostModels
 {
-    class PostEdit
+    public class PostEdit
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
     }
 }
