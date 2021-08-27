@@ -1,6 +1,4 @@
-﻿using _72hour.Data;
-using _72hour.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
