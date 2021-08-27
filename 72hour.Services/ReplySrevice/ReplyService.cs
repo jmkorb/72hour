@@ -1,4 +1,5 @@
 ﻿using _72hour.Data;
+using _72hour.Models.ReplyModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
