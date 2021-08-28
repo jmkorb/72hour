@@ -1,4 +1,5 @@
-﻿using _72hour.Services.PostServices;
+﻿using _72hour.Models.PostModels;
+using _72hour.Services.PostServices;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,24 @@ namespace _72hour.WebAPI.Controllers.PostController
     [Authorize]
     public class PostController : ApiController
     {
-        [HttpPost]
         private PostService CreatePostService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var svc = new PostService(userId);
             return svc;
+        }
+        public async Task<IHttpActionResult> Post(PostCreate post)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreatePostService();
+            var success = await service.Post(post);
+
+            if (!success)
+                return InternalServerError();
+
+            return Ok();
         }
 
         [HttpGet]
