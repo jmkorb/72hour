@@ -36,8 +36,8 @@ namespace _72hour.Services
                     return false;
                 }
 
-                entity.Post = post;
-                ctx.Likes.Add(entity);
+                entity.Post = post; // not necessary since you have set the foreign key above on line 26
+                ctx.Likes.Add(entity); 
 
                 return await ctx.SaveChangesAsync() > 0;
             }

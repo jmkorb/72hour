@@ -16,22 +16,20 @@ namespace _72hour.Services.ReplySrevice
         {
             _authorId = authorId;
         }
-        public async Task<ReplyDetail> Get(int id)
+        public async Task<IEnumerable<ReplyDetail>> Get(int id) // could be more than one so have to return IEnumerable
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var reply =
+                var comment =
                     await
-                    ctx.Comments.SingleOrDefaultAsync(c => c.Id == id);
-                if (reply is null)
+                    ctx.Comments.SingleOrDefaultAsync(c => c.Id == id); // This is great
+
+                if (comment is null)
                 {
                     return null;
                 }
-                return new ReplyDetail
-                {
-                    Id = reply.Id,
-                    Text = reply.Text
-                };
+
+                return comment.Replies.Select(r => new ReplyDetail { Text = r.Text, Id = r.Id }); // transform Replies into ReplyDetail
             }
         }
         public async Task<bool> Post(ReplyCreate reply)
@@ -50,8 +48,8 @@ namespace _72hour.Services.ReplySrevice
                     return false;
                 }
 
-                entity.Comments = comment;
-                entity.Comments.Replies.Add(entity);
+                entity.Comments = comment; 
+                entity.Comments.Replies.Add(entity); // only have to do this, step above is redundant
                 ctx.Replies.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }

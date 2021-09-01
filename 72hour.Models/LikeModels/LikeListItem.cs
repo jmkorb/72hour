@@ -11,6 +11,6 @@ namespace _72hour.Models.LikeModels
     {
         public int LikeId { get; set; }
         public int PostId { get; set; }
-
+        // I would maybe add owner id to this so we can see who liked the post? 
     }
 }
