@@ -19,10 +19,12 @@ namespace _72hour.WebAPI.Controllers.PostController
             var svc = new PostService(userId);
             return svc;
         }
+
+        [HttpPost]
         public async Task<IHttpActionResult> Post(PostCreate post)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            if (!this.ModelState.IsValid)
+                return BadRequest(this.ModelState);
 
             var service = CreatePostService();
             var success = await service.Post(post);

@@ -22,6 +22,8 @@ namespace _72hour.Services
             var entity =
                 new Comment
                 {
+                    // need to add PostId as well or else will throw an exception when inserting
+                    PostId = comment.PostId,
                     AuthorId = _userId,
                     Text = comment.Text
                 };
@@ -46,7 +48,7 @@ namespace _72hour.Services
                         new CommentListDetail
                         {
                             PostId = e.PostId,
-                           
+                           // what about the other properties?
                             
                         }
                         );
@@ -54,22 +56,18 @@ namespace _72hour.Services
             }
         }
 
-        public CommentListDetail GetCommentById(int id)
+        // this should be by Post Id
+        public IEnumerable<CommentListDetail> GetCommentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Comments
-                    .Single(e => e.Id == id && e.AuthorId == _userId);
-                return
-                    new CommentListDetail
-                    {
-                        Id = entity.Id,
-                        AuthorId = entity.AuthorId,
-                       
-                        
-                    };
+                    .Posts
+                    .SingleOrDefault(e => e.Id == id && e.AuthorId == _userId);
+
+                return entity?.Comments.Select(c => new CommentListDetail { Id = c.Id, AuthorId = c.AuthorId, PostId = c.PostId }).ToList() ?? Enumerable.Empty<CommentListDetail>();
+                   
             }
         }
 
@@ -81,6 +79,8 @@ namespace _72hour.Services
                     ctx
                     .Comments
                     .Single(e => e.Id == Comment.Id && e.AuthorId == _userId);
+
+                // might be a good idea to see if the above actually returned someting
 
                 entity.Id = Comment.Id;
                 entity.Text = Comment.Text;
@@ -97,7 +97,7 @@ namespace _72hour.Services
                 var entity =
                     ctx
                     .Comments
-                    .Single(e => e.Id == CommentId && e.AuthorId == _userId);
+                    .Single(e => e.Id == CommentId && e.AuthorId == _userId); // better to use single or default
 
                 ctx.Comments.Remove(entity);
 

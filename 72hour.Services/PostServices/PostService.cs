@@ -23,8 +23,9 @@ namespace _72hour.Services.PostServices
         {
             var entity = new Post
             {
+                AuthorId = _userId, // might be a good idea to make sure a post is associated with a particular user
                 Title = post.Title,
-                Text= post.Text
+                Text = post.Text
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,9 +38,7 @@ namespace _72hour.Services.PostServices
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    await
-                    ctx
+                var query = ctx
                     .Posts
                     .Select(p => new PostListDetail
                     {
@@ -48,9 +47,9 @@ namespace _72hour.Services.PostServices
                         Text = p.Text,
                         Comments = p.Comments,
                         Likes = p.Likes
-                    }).ToListAsync();
+                    });
 
-                return query;
+                return await query.ToListAsync();
             }
         }
 

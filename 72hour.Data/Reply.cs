@@ -14,10 +14,10 @@ namespace _72hour.Data
         public int Id { get; set; }
 
         [ForeignKey(nameof(Comments))]
+        public int CommentId { get; set; } // had to switch this so the foreign key attribute sits on top of it
         public string Text { get; set; }
-        public int CommentId { get; set; }
 
-        public virtual Comment Comments { get; set; }
+        public virtual Comment Comments { get; set; } // I would change this to comment instead of comments
 
         public Guid AutorId { get; set; }
     }

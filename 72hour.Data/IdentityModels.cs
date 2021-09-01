@@ -58,8 +58,8 @@ namespace _72hour.Data
             HasKey(iul => iul.UserId);
         }
     }
-
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+                                                                        // this needs to be IdentityUserRole
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
     {
         public IdentityUserRoleConfiguration()
         {

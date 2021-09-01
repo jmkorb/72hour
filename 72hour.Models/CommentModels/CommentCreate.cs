@@ -14,6 +14,9 @@ namespace _72hour.Models.CommentModels
         public string Text { get; set; }
 
         [Required]
-        public Guid AuthorId { get; set; }
+        public int PostId { get; set; }
+
+        // [Required] wouldn't make this required since we have the user name through the Identity Context
+        public Guid AuthorId { get; set; } 
     }
 }
